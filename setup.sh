@@ -20,6 +20,20 @@ sudo apt install xrdp -y
 # Install SSH
 sudo apt install openssh-server -y
 
+# Install Printer Support
+sudo apt install system-config-printer -y
+
+# Install Scanner Support
+sudo apt install xsane -y
+sudo apt install simple-scan -y
+
+# Install HP Printer and Scanner drivers
+cd ~/Downloads || echo "Error cd-ing into user Downloads folder" && exit
+wget "https://ftp.hp.com/pub/softlib/software13/printers/SS/SL-M4580FX/uld_V1.00.39_01.17.tar.gz"
+tar xf uld_V1.00.39_01.17.tar.gz
+sudo sed -i '/^show_license/ s/$/ \n return/' ~/Downloads/uld/noarch/pre_install.sh
+sudo ./uld/install.sh
+
 # Disable sleep on lid close
 sudo tee -a /etc/systemd/logind.conf > /dev/null <<EOT
 
@@ -143,6 +157,7 @@ sudo tee -a /etc/exports > /dev/null <<EOT
 
 /media/adrian/ 192.168.1.0/24(rw,nohide,no_subtree_check,crossmnt,nohide)
 EOT
+sudo exportfs -arv
 sudo systemctl restart nfs-kernel-server
 
 # Install Samba

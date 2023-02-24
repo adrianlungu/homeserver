@@ -9,6 +9,7 @@ This repo contains various scripts, tools, reminders or notes on configuration o
 - [ ] Configure NFS Shares
 - [ ] Configure additional scripts from the scripts folder
 - [ ] Configure $HOSTNAME env var for OwnCloud Infinite Scale (ocis)
+- [ ] Configure and share Network Printers
 
 ## Scripts
 
