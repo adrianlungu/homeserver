@@ -155,7 +155,7 @@ docker run \
 sudo apt install nfs-kernel-server -y
 sudo tee -a /etc/exports > /dev/null <<EOT
 
-/media/adrian/ 192.168.1.0/24(rw,nohide,no_subtree_check,crossmnt,nohide)
+/media/adrian/ 192.168.1.0/24(rw,sync,no_subtree_check,all_squash,insecure,crossmnt,nohide,anonuid=1000,anongid=1000)
 EOT
 sudo exportfs -arv
 sudo systemctl restart nfs-kernel-server
