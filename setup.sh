@@ -110,6 +110,13 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 # Install Printer / Scanner stuff
 ### Install Samsung Unified Linux Driver: https://www.bchemnet.com/suldr/index.html
+### Configure local access: https://serverfault.com/questions/836266/how-can-i-enable-remote-access-to-the-admin-page-in-cups
+
+# Install samsung unified linux driver
+bash -c 'echo "deb https://www.bchemnet.com/suldr/ debian extra" >> /etc/apt/sources.list'
+apt update
+apt install suldr-keyring
+apt install suld-driver-4.00.39
 
 # apt install cups
 
