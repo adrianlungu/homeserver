@@ -109,6 +109,10 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 # Install DynDNS - not needed as using ISP Dynamic DNS
 
 # Install Printer / Scanner stuff
+### Install Samsung Unified Linux Driver: https://www.bchemnet.com/suldr/index.html
+
+# apt install cups
+
 
 # Install FTP Server
 sudo apt install vsftpd -y
